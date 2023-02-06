@@ -17,7 +17,6 @@ function randomGame() {
     count++;
     n = Math.random().toFixed(2);
     if (n >= 0.75) {
-      console.log(`${count} tries to reach ${n}`);
       clearInterval(timer);
     } else
     console.log(`${count} tries to reach ${n}`);
