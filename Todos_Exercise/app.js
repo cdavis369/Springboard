@@ -1,8 +1,9 @@
-let listStorage = {};
+let storedList = {};
+
 if (localStorage.getItem('todos') !== null) {
-  listStorage = JSON.parse(localStorage.getItem('todos'));
-  for (let item in listStorage) {
-    addToList(item, listStorage[item]);
+  storedList = JSON.parse(localStorage.getItem('todos'));
+  for (let todo in storedList) {
+    addToList(todo, storedList[todo]);
   }
 } 
 
@@ -12,18 +13,18 @@ form.addEventListener("submit", function(e) {
   addToList(document.querySelector('#newtodo').value, "incomplete");
 })
 
-function addToList(item, status) {
+function addToList(todo, status) {
   const li = document.createElement('li');
   const p = document.createElement('p');
-  p.setAttribute('class', status)
-  p.innerHTML = item;
+  p.setAttribute('class', status);
+  p.innerHTML = todo;
 
   const btnComplete = document.createElement('button');
   btnComplete.innerHTML = 'complete';
   btnComplete.addEventListener('click', function() {
     p.setAttribute("class", "complete");
-    listStorage[item] = "complete";
-    localStorage.setItem('todos', JSON.stringify(listStorage));
+    storedList[todo] = "complete";
+    localStorage.setItem('todos', JSON.stringify(storedList));
     btnComplete.remove();
   });
 
@@ -31,23 +32,25 @@ function addToList(item, status) {
   btnDelete.innerHTML = 'delete';
   btnDelete.addEventListener('click', function() {
     li.remove();
-    delete listStorage[item];
-    console.log(Object.keys(listStorage).length);
-    if (Object.keys(listStorage).length === 0)
+    delete storedList[todo];
+    console.log(Object.keys(storedList).length);
+    if (Object.keys(storedList).length === 0)
       localStorage.clear('todos');
     else
-      localStorage.setItem('todos', JSON.stringify(listStorage));
+      localStorage.setItem('todos', JSON.stringify(storedList));
   })
-  
+
   if (status === "incomplete")
     li.append(p, btnComplete, " ", btnDelete)
   else 
     li.append(p, btnDelete)
+
   const list = document.querySelector('ul');
   list.append(li);
-  if (!listStorage.hasOwnProperty(item)) {
-    listStorage[item] = "incomplete";
-    localStorage.setItem('todos', JSON.stringify(listStorage));
+  
+  if (!storedList.hasOwnProperty(todo)) {
+    storedList[todo] = "incomplete";
+    localStorage.setItem('todos', JSON.stringify(storedList));
   }
   document.querySelector('#newtodo').value = '';
 }
