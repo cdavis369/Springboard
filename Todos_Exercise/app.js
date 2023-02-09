@@ -33,7 +33,6 @@ function addToList(todo, status) {
   btnDelete.addEventListener('click', function() {
     li.remove();
     delete storedList[todo];
-    console.log(Object.keys(storedList).length);
     if (Object.keys(storedList).length === 0)
       localStorage.clear('todos');
     else
