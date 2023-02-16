@@ -1,0 +1,22 @@
+1. mkdir first
+2. cd first
+3. touch person.txt
+4. mv person.txt another.txt
+5. cp another.txt copy.txt
+6. rm copy.txt
+7. cp -r ../first ../second
+8. rm -r ../second
+
+1. man displays the manual for following command. You scroll the manual page with the up and down keys 
+and leave man by pressing q. 
+2. -l flag for ls is to use a long listing format. -a (--all) means do not ignore entries starting with a period.
+3. ALT+F jumps forward one word and ALT+B jumps backwards one word.
+4. CTRL+A jumps to he beginning of the line
+5. CTRL+E jumps to the end of the line
+6. CTRL+W deletes the word to the left of the cursor
+7. The terminal is a command line interpreter, executing a single line entered. 
+8. An absolute path is the path from the root directory to current directory.
+9. A relative path is from the current directory to a designated directory. 
+The shell is a program run by the terminal, to execute multiple lines of code.
+10. A flag is an optional parameter passed into a terminal command allowing for more command options. 
+cp -r (copy directory recursively) rm -r (remove recursivley) rm -d (remove empty directory)
