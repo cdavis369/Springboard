@@ -1,0 +1,377 @@
+corey@Corey-Desktop:~$ mkdir learn_git_again
+corey@Corey-Desktop:~$ cd learn_git_again
+corey@Corey-Desktop:~/learn_git_again$ touch third.txt
+corey@Corey-Desktop:~/learn_git_again$ git init
+Initialized empty Git repository in /home/corey/learn_git_again/.git/
+corey@Corey-Desktop:~/learn_git_again$ ls
+third.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        third.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+corey@Corey-Desktop:~/learn_git_again$ git add third.txt
+corey@Corey-Desktop:~/learn_git_again$ git log
+fatal: your current branch 'master' does not have any commits yet
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "adding third.txt"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <corey@Corey-Desktop.davis-family.net>) not allowed
+corey@Corey-Desktop:~/learn_git_again$ git commit -m third.txt "adding third.txt"
+error: pathspec 'adding third.txt' did not match any file(s) known to git
+corey@Corey-Desktop:~/learn_git_again$ git commint -m "adding thid.txt" third.txt
+git: 'commint' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "adding thid.txt" third.txt
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <corey@Corey-Desktop.davis-family.net>) not allowed
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   third.txt
+
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "adding third.txt"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: empty ident name (for <corey@Corey-Desktop.davis-family.net>) not allowed
+corey@Corey-Desktop:~/learn_git_again$ git config --globaluser.name corey
+error: unknown option `globaluser.name'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --default <value>     with --get, use default value when missing entry
+
+corey@Corey-Desktop:~/learn_git_again$ git config --global user.name corey
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "adding third.txt"
+[master (root-commit) 4e815f5] adding third.txt
+ Committer: corey <corey@Corey-Desktop.davis-family.net>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+nothing to commit, working tree clean
+corey@Corey-Desktop:~/learn_git_again$ ls
+third.txt
+corey@Corey-Desktop:~/learn_git_again$ git log
+commit 4e815f53410a5e84de6cc93f9d32bf751d71a4c7 (HEAD -> master)
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:17:17 2023 -0500
+
+    adding third.txt
+corey@Corey-Desktop:~/learn_git_again$ touch fourth.txt
+corey@Corey-Desktop:~/learn_git_again$ ls
+fourth.txt  third.txt
+corey@Corey-Desktop:~/learn_git_again$ git log
+commit 4e815f53410a5e84de6cc93f9d32bf751d71a4c7 (HEAD -> master)
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:17:17 2023 -0500
+
+    adding third.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fourth.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+corey@Corey-Desktop:~/learn_git_again$ git add fourth.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   fourth.txt
+
+corey@Corey-Desktop:~/learn_git_again$ git commit "adding fourth.txt"
+error: pathspec 'adding fourth.txt' did not match any file(s) known to git
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "adding fourth.txt"
+[master 1161f84] adding fourth.txt
+ Committer: corey <corey@Corey-Desktop.davis-family.net>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+corey@Corey-Desktop:~/learn_git_again$ git log
+commit 1161f84771c606721b47be2ed0267c5852901f8d (HEAD -> master)
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:19:49 2023 -0500
+
+    adding fourth.txt
+
+commit 4e815f53410a5e84de6cc93f9d32bf751d71a4c7
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:17:17 2023 -0500
+
+    adding third.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+nothing to commit, working tree clean
+corey@Corey-Desktop:~/learn_git_again$ ls
+fourth.txt  third.txt
+corey@Corey-Desktop:~/learn_git_again$ touch fifth.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        fifth.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+corey@Corey-Desktop:~/learn_git_again$ git add fifth.txt
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "adding fifth.txt"
+[master f5d5b66] adding fifth.txt
+ Committer: corey <corey@Corey-Desktop.davis-family.net>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fifth.txt
+corey@Corey-Desktop:~/learn_git_again$ ls
+fifth.txt  fourth.txt  third.txt
+corey@Corey-Desktop:~/learn_git_again$ rm third.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    third.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "removing third.txt"
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    third.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+corey@Corey-Desktop:~/learn_git_again$ git log
+commit f5d5b664adea7c662a623b6a5d6ea178a3c54743 (HEAD -> master)
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:20:48 2023 -0500
+
+    adding fifth.txt
+
+commit 1161f84771c606721b47be2ed0267c5852901f8d
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:19:49 2023 -0500
+
+    adding fourth.txt
+
+commit 4e815f53410a5e84de6cc93f9d32bf751d71a4c7
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:17:17 2023 -0500
+
+    adding third.txt
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    third.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+corey@Corey-Desktop:~/learn_git_again$ git add .
+corey@Corey-Desktop:~/learn_git_again$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    third.txt
+
+corey@Corey-Desktop:~/learn_git_again$ git commit -m "removing third.txt"
+[master 31f2390] removing third.txt
+ Committer: corey <corey@Corey-Desktop.davis-family.net>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+corey@Corey-Desktop:~/learn_git_again$ git log
+commit 31f23906457b9a452db0a706525bebb728e371a1 (HEAD -> master)
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:22:36 2023 -0500
+
+    removing third.txt
+
+commit f5d5b664adea7c662a623b6a5d6ea178a3c54743
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:20:48 2023 -0500
+
+    adding fifth.txt
+
+commit 1161f84771c606721b47be2ed0267c5852901f8d
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:19:49 2023 -0500
+
+    adding fourth.txt
+
+commit 4e815f53410a5e84de6cc93f9d32bf751d71a4c7
+Author: corey <corey@Corey-Desktop.davis-family.net>
+Date:   Thu Feb 16 19:17:17 2023 -0500
+
+    adding third.txt
+corey@Corey-Desktop:~/learn_git_again$ git config --global core.editor
+corey@Corey-Desktop:~/learn_git_again$ git config --global core.pager cat
+corey@Corey-Desktop:~/learn_git_again$ man git-config
+corey@Corey-Desktop:~/learn_git_again$ git config --global core.pager=cat
+error: invalid key: core.pager=cat
+corey@Corey-Desktop:~/learn_git_again$ git config --global core.pager cat
+corey@Corey-Desktop:~/learn_git_again$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --default <value>     with --get, use default value when missing entry
+
+corey@Corey-Desktop:~/learn_git_again$ git config -l
+user.name=corey
+core.pager=cat
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+corey@Corey-Desktop:~/learn_git_again$
