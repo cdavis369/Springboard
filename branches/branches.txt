@@ -1,0 +1,8 @@
+1. git checkout -b branch-name
+2. A recursive merge is the default merge strategy (no-ff). 
+	A fast forward merge can be used when there is a linear path from 
+	the current branch tip to the target branch.
+3. git checkout branch-name changes to the already-existing branch
+4. git checkout -d branch-name will delete a branch
+5. merge confilcts happen when the same file is edited and commited on two seperate branches
+	which are trying to be merged together.
