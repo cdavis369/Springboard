@@ -31,7 +31,6 @@ form.addEventListener('submit', function(e) {
     })
 
     newDiv.append(canvas, btnDelete);
-
     document.querySelector('.library').append(newDiv);
   }
 })
