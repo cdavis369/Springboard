@@ -1,67 +1,66 @@
+// const arr = doubleValues([5,1,2,3,10]);
+// const even = onlyEvenvalues([5,1,2,3,10]);
+// const str = showFirstAndLast(['colt','matt', 'tim', 'test']);
+// const keyAndValue = addKeyAndValue(
+//   [
+//     {name: 'Elie'},
+//     {name: 'Tim'},
+//     {name: 'Matt'},
+//     {name: 'Colt'}
+//   ],
+//     'title',
+//     'instructor'
+//   );
+// const vCount = vowelCount('I Am awesome and so are you');
+// const mapDouble = doubleValuesWithMap([1,-2,-3]);
+// const valXIndex = valTimesIndex([1,-2,-3]);
+// const extractedKeys = extractKey(
+//   [
+//     {name: 'Elie'},
+//     {name: 'Tim'},
+//     {name: 'Matt'},
+//     {name: 'Colt'}
+//   ],
+//   'name'
+// );
 
-const arr = doubleValues([5,1,2,3,10]);
-const even = onlyEvenvalues([5,1,2,3,10]);
-const str = showFirstAndLast(['colt','matt', 'tim', 'test']);
-const keyAndValue = addKeyAndValue(
-  [
-    {name: 'Elie'},
-    {name: 'Tim'},
-    {name: 'Matt'},
-    {name: 'Colt'}
-  ],
-    'title',
-    'instructor'
-  );
-const vCount = vowelCount('I Am awesome and so are you');
-const mapDouble = doubleValuesWithMap([1,-2,-3]);
-const valXIndex = valTimesIndex([1,-2,-3]);
-const extractedKeys = extractKey(
-  [
-    {name: 'Elie'},
-    {name: 'Tim'},
-    {name: 'Matt'},
-    {name: 'Colt'}
-  ],
-  'name'
-);
+// const fullNames = extractFullName([
+//   {first: 'Elie', last:"Schoppik"},
+//   {first: 'Tim', last:"Garcia"},
+//   {first: 'Matt', last:"Lane"},
+//   {first: 'Colt', last:"Steele"}
+// ]);
 
-const fullNames = extractFullName([
-  {first: 'Elie', last:"Schoppik"},
-  {first: 'Tim', last:"Garcia"},
-  {first: 'Matt', last:"Lane"},
-  {first: 'Colt', last:"Steele"}
-]);
+// const filterBV = filterByValue(
+//   [
+//     {first: 'Elie', last:"Schoppik"},
+//     {first: 'Tim', last:"Garcia", isCatOwner: true},
+//     {first: 'Matt', last:"Lane", isCatOwner: false},
+//     {first: 'Colt', last:"Steele", isCatOwner: true}
+//   ],
+//   'isCatOwner'
+//   );
 
-const filterBV = filterByValue(
-  [
-    {first: 'Elie', last:"Schoppik"},
-    {first: 'Tim', last:"Garcia", isCatOwner: true},
-    {first: 'Matt', last:"Lane", isCatOwner: false},
-    {first: 'Colt', last:"Steele", isCatOwner: true}
-  ],
-  'isCatOwner'
-  );
+// const find1 = find([1,2,3,4,5], 3);
+// const find2 = find([1,2,3,4,5], 10);
 
-const find1 = find([1,2,3,4,5], 3);
-const find2 = find([1,2,3,4,5], 10);
+// const find1stObject = findInObj(
+//   [
+//     {first: 'Elie', last:"Schoppik"},
+//     {first: 'Tim', last:"Garcia", isCatOwner: true},
+//     {first: 'att', last:"Lane"},
+//     {first: 'Colt', last:"Steele", isCatOwner: true}
+//   ],
+//   'isCatOwner',
+//   true
+// );
 
-const find1stObject = findInObj(
-  [
-    {first: 'Elie', last:"Schoppik"},
-    {first: 'Tim', last:"Garcia", isCatOwner: true},
-    {first: 'att', last:"Lane"},
-    {first: 'Colt', last:"Steele", isCatOwner: true}
-  ],
-  'isCatOwner',
-  true
-);
+// const rv = removeVowels('Elie'); // ('l')
+// const rv2 = removeVowels('TIM'); // ('tm')
+// const rv3 = removeVowels('ZZZZZZ'); // ('zzzzzz')
 
-const rv = removeVowels('Elie'); // ('l')
-const rv2 = removeVowels('TIM'); // ('tm')
-const rv3 = removeVowels('ZZZZZZ'); // ('zzzzzz')
-
-const doubleOdd = doubleOddNumbers([1,2,3,4,5]); // [2,6,10]
-const doubleOdd2 = doubleOddNumbers([4,4,4,4,4]); // []
+// const doubleOdd = doubleOddNumbers([1,2,3,4,5]); // [2,6,10]
+// const doubleOdd2 = doubleOddNumbers([4,4,4,4,4]); // []
 
 function doubleValues(arr) {
   let result = [];
@@ -162,7 +161,7 @@ function removeVowels(string) {
 
 function doubleOddNumbers(arr) {
   const odd =  arr.filter((a) => {
-    if (a % 2 !== 0) return a*2;
+    if (a % 2 !== 0) return a;
   });
   return odd.map((value) => { return value * 2 })
 }
