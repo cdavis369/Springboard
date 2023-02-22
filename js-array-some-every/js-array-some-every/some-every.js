@@ -72,7 +72,9 @@ Examples:
 */
 
 function hasCertainKey(arr, key) {
-    return arr.every(function(e) { return e[key]; });
+    return arr.every(function(e) { 
+        return e[key]; 
+    });
 }
 
 /*
@@ -92,5 +94,7 @@ Examples:
 */
 
 function hasCertainValue(arr, key, searchValue) {
-    return arr.every(function(e) { return e[key] === searchValue; })
+    return arr.every(function(e) { 
+        return e[key] === searchValue; 
+    })
 }
