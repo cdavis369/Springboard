@@ -1,13 +1,22 @@
 let savedMemes = [];
-const imageInput = document.querySelector('#inputFile');
+const imageInputFile = document.querySelector('#inputFile');
+const imageInputURL = document.querySelector('#inputURL');
 const topText = document.querySelector('#inputTopText');
 const bottomText = document.querySelector('#inputBottomText');
 const canvas = document.querySelector('canvas');
-
 const form = document.querySelector('form');
+
+imageInputFile.addEventListener('change', function(e) {
+  imageInputURL.value = '';
+})
+
+imageInputURL.addEventListener('change', function(e) {
+  imageInputFile.value = '';
+})
+
 form.addEventListener('submit', function(e) {
   e.preventDefault();
-  if (imageInput.value == "" || topText.value === "" && bottomText.value === "") {
+  if (imageInputFile.value == "" && imageInputURL.value == "" || topText.value === "" && bottomText.value === "") {
     alert("A picture and a bottom or top text required.");
   } 
   else {
@@ -15,12 +24,18 @@ form.addEventListener('submit', function(e) {
     newDiv.setAttribute('class', 'savedMeme');
     const canvas = document.createElement('canvas');
     canvas.setAttribute('class', 'meme');
-    const imgURL = URL.createObjectURL(imageInput.files[0]);
+    let imgURL;
+    console.log(imageInputFile.files[0])
+    if (imageInputFile.files[0] !== undefined)
+      imgURL = URL.createObjectURL(imageInputFile.files[0]);
+    else 
+      imgURL = imageInputURL.value;
+    console.log(imgURL);
     const image = document.createElement('img');
     image.setAttribute('src', imgURL);
     image.addEventListener('load', function() {
       updateMeme(canvas, image, topText.value, bottomText.value);
-      bottomText.value = topText.value = imageInput.value = "";
+      bottomText.value = topText.value = imageInputFile.value = "";
     }, {once : true});
     
     const btnDelete = document.createElement('button');
@@ -28,12 +43,12 @@ form.addEventListener('submit', function(e) {
     btnDelete.classList.add('button');
     btnDelete.addEventListener('click', function() {
       newDiv.remove();
-    })
+    });
 
     newDiv.append(canvas, btnDelete);
     document.querySelector('.library').append(newDiv);
   }
-})
+});
 
 function updateMeme(canvas, image, topText, bottomText) {
   const ctx = canvas.getContext("2d");
