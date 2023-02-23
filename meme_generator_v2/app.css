@@ -57,6 +57,12 @@ label {
   margin-bottom: 10px;
 }
 
+p {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
 input {
   width: 100%;
   margin-bottom: 10px;
