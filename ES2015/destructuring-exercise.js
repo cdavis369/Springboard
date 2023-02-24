@@ -43,7 +43,7 @@ console.log(aFewOfMyFavoriteThings); // ["Bright copper kettles", "warm woolen m
 // let numbers = [10, 20, 30];
 // [numbers[1], numbers[2]] = [numbers[2], numbers[1]]
 
-console.log(numbers) // [10, 30, 20]
+console.log(numbers); // [10, 30, 20]
 
 // var obj = {
 //   numbers: {
@@ -63,7 +63,7 @@ console.log(numbers) // [10, 30, 20]
 // arr[0] = arr[1];
 // arr[1] = temp;
 
-[arr[1], arr[0]] = [arr[0], arr[1]]
+[arr[1], arr[0]] = [arr[0], arr[1]];
 
 function raceResults(arr) {
   const [first, second, third, ...rest] = arr;
