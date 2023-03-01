@@ -1,0 +1,21 @@
+.rating-form {
+  width: auto;
+  margin: auto;
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+}
+
+
+.movies {
+  width: auto;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+.btn-succes {
+  width: 100%;
+}
+
