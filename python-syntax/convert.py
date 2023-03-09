@@ -24,7 +24,7 @@ def convert_temp(unit_in, unit_out, temp):
     elif unit_out not in valid_temps:
         return "Invalid unit " + unit_out
     elif unit_in == "c" and unit_out == "f":
-        return ((temp * (5/9)) + 32)
+        return (temp * (5/9)) + 32
     elif unit_in == "f" and unit_out == "c":
         return (temp - 32) * (5/9)
     else:
