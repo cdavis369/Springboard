@@ -22,4 +22,4 @@ def read_file_list(filename):
     file = open(f"{filename}.txt", "r")
     for line in file:
         print(f"line = {line}")
-read_file_list("dog")
+read_file_list("dogs")
