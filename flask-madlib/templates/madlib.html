@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} Madlib! {% endblock %}
+
+{% block content %} 
+<div id="madlib">
+  <p>{{story}}</p>
+  <a href="/"><input type="submit" value="back"/></a>
+</div>
+
+{% endblock %}
